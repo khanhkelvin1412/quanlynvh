@@ -19,14 +19,14 @@ public class RoomDAO extends AbstractDAO<Room> implements IRoomDAO {
 	@Override
 	public Long insertRoom(Room room) {
 		StringBuilder sql = new StringBuilder("INSERT INTO room");
-		sql.append("(floor, numer_floor, floor, status, price)");
+		sql.append("(floor, number_floor, floor, status, price)");
 		sql.append(" VALUES(?, ?, ?, ?)");
 		return insert(sql.toString(), room.getFloor(), room.getNumber_floor(), room.getFloor(),room.getStatus(), room.getPrice());
 	}
 
 	@Override
 	public void updateRoom(Room room) {
-		StringBuilder sql = new StringBuilder("UPDATE room SET floor = ?, numer_floor = ?, floor = ?,");
+		StringBuilder sql = new StringBuilder("UPDATE room SET floor = ?, number_floor = ?, floor = ?,");
 		sql.append(" status = ?, price = ?  WHERE id = ?");
 		update(sql.toString(), room.getFloor(), room.getNumber_floor(), room.getFloor(),room.getStatus(), room.getPrice(), room.getId());
 	}
@@ -42,6 +42,13 @@ public class RoomDAO extends AbstractDAO<Room> implements IRoomDAO {
 	public void delete(Long id) {
 		String sql = "DELETE FROM room WHERE id = ?";
 		update(sql, id);
+	}
+
+	@Override
+	public Room findByFloorAndNumberFloor(Integer floor, Integer numberFloor, Integer status) {
+		String sql = "SELECT * FROM room WHERE floor = ? and number_floor = ? and status = ?";
+		List<Room> rooms = query(sql, new RoomMapper(), floor, numberFloor, status);
+		return rooms.isEmpty() ? null : rooms.get(0);
 	}
 
 }

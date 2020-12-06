@@ -1,4 +1,7 @@
 package application.service;
 
-public class RoomDeviceService {
+import application.model.Room_Device;
+
+public interface RoomDeviceService {
+    Room_Device findByRoomIdAndDeviceId(Long roomId, Long deviceId);
 }

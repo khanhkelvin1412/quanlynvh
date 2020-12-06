@@ -6,16 +6,18 @@ public class Room {
 	private Integer floor;
 	private Integer status;
 	private Long price;
+	private Integer area;
 	
 	public Room() {
 	}
 
-	public Room(Integer id, Integer number_floor, Integer floor, Integer status, Long price) {
+	public Room(Integer id, Integer number_floor, Integer floor, Integer status, Long price, Integer area) {
 		this.id = id;
 		this.number_floor = number_floor;
 		this.floor = floor;
 		this.status = status;
 		this.price = price;
+		this.area = area;
 	}
 
 	public Integer getId() {
@@ -56,5 +58,13 @@ public class Room {
 
 	public void setPrice(Long price) {
 		this.price = price;
+	}
+
+	public Integer getArea() {
+		return area;
+	}
+
+	public void setArea(Integer area) {
+		this.area = area;
 	}
 }

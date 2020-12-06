@@ -42,4 +42,11 @@ public class DeviceDAO extends AbstractDAO<Device> implements IDeviceDAO {
 		update(sql, id);
 	}
 
+	@Override
+	public Device findByName(String name, Integer status) {
+		String sql = "SELECT * FROM device WHERE name LIKE " + "'%" + name + "%'" + " AND status = ?";
+		List<Device> devices = query(sql, new DeviceMapper(), status);
+		return devices.isEmpty() ? null : devices.get(0);
+	}
+
 }
