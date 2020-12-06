@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-
 <AnchorPane prefHeight="299.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminController ">
     <children>
         <Rectangle height="345.0" layoutX="-1.0" stroke="#9a20208c" strokeType="INSIDE" width="685.0">

@@ -12,4 +12,5 @@ public interface IRoomDAO extends GenericDAO<Room>{
 	Room findOne(Long id);
 	void delete(Long id);
 	Room findByFloorAndNumberFloor(Integer floor, Integer numberFloor, Integer status);
+
 }

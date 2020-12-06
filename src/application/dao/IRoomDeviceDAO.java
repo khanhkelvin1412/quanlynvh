@@ -11,4 +11,5 @@ public interface IRoomDeviceDAO extends GenericDAO<Room_Device>{
 	Room_Device findOne(Long id);
 	void delete(Long id);
 	Room_Device findByRoomIdAndDeviceId(Long roomId, Long deviceId);
+
 }

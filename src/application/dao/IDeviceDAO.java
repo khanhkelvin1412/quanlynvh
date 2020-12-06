@@ -7,8 +7,7 @@ import java.util.List;
 
 public interface IDeviceDAO extends GenericDAO<Device>{
 	List<Device> findAll();
-
-	Long insertDevice(Device device);
+    Long insertDevice(Device device);
 
 	void updateDevice(Device device);
 

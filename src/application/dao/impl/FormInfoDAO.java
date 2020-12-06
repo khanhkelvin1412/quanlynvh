@@ -8,7 +8,7 @@ import application.model.FormInfo;
 import java.util.List;
 
 public class FormInfoDAO extends AbstractDAO<FormInfo> implements IFormInfoDAO {
-	
+
 	@Override
 	public List<FormInfo> findAll() {
 		String sql = "SELECT * FROM form_info";
@@ -30,14 +30,18 @@ public class FormInfoDAO extends AbstractDAO<FormInfo> implements IFormInfoDAO {
 				form.getSpeaker(), form.getRadio(), form.getProjector(), form.getRoom());
 	}
 
+
 	@Override
 	public void updateRoom(FormInfo form) {
+
 		StringBuilder sql = new StringBuilder("UPDATE form_info SET fullname = ?, adress = ?, credit_card = ?, birthday = ?, gender = ?,");
 		sql.append("resident = ?, reason = ?, deposit = ?, status = ?, status_pay = ?,");
 		sql.append("date_of_allocation = ?, nation = ?, religion = ?, address_of_allocation = ?,");
 		sql.append("phone = ?, permanent_address = ?, sum_price = ?");
 		sql.append(" WHERE id = ?");
+
 		update(sql.toString(), form.getFullname(), form.getAddress(), form.getCredit_card(), form.getBirthday(),
+
 				form.getGender(), form.getResident(), form.getReason(), form.getDeposit(), form.getStatus(), form.getStatus_pay(),
 				form.getDate_of_allocation(), form.getNation(), form.getReligion(), form.getAddress_of_allocation(),
 				form.getPhone(), form.getPermanent_address(), form.getSum_price(), form.getId());
@@ -48,11 +52,5 @@ public class FormInfoDAO extends AbstractDAO<FormInfo> implements IFormInfoDAO {
 		String sql = "SELECT * FROM form_info WHERE id = ?" ;
 		List<FormInfo> list = query(sql, new FormInfoMapper(), id);
 		return list.isEmpty() ? null : list.get(0);
-	}
-
-	@Override
-	public void delete(Long id) {
-		String sql = "DELETE FROM form_info WHERE id = ?";
-		update(sql, id);
 	}
 }

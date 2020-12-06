@@ -1,5 +1,4 @@
 package application.service;
-
 import application.model.Device;
 
 import java.util.List;

@@ -33,7 +33,6 @@ public class FormInfoMapper implements RowMapper<FormInfo>{
 			form.setSpeaker(rs.getInt("number_speaker"));
 			form.setRadio(rs.getInt("number_radio"));
 			form.setProjector(rs.getInt("number_projector"));
-			form.setRoom(rs.getString("room"));
 			return form;
 		} catch (Exception e) {
 			return null;

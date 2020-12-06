@@ -50,4 +50,5 @@ public class RoomDeviceDAO extends AbstractDAO<Room_Device> implements IRoomDevi
 		List<Room_Device> list = query(sql, new RoomDeviceMapper(), roomId, deviceId);
 		return list.isEmpty() ? null : list.get(0);
 	}
+
 }
