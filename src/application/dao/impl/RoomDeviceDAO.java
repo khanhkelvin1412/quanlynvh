@@ -43,4 +43,12 @@ public class RoomDeviceDAO extends AbstractDAO<Room_Device> implements IRoomDevi
 		String sql = "DELETE FROM room_device WHERE id = ?";
 		update(sql, id);
 	}
+
+	@Override
+	public Room_Device findByRoomIdAndDeviceId(Long roomId, Long deviceId) {
+		String sql = "SELECT * FROM room_device WHERE room_id = ? AND device_id = ?";
+		List<Room_Device> list = query(sql, new RoomDeviceMapper(), roomId, deviceId);
+		return list.isEmpty() ? null : list.get(0);
+	}
+
 }

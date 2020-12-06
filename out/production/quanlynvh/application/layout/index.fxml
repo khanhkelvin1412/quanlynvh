@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.layout.Index">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RedirectController">
    <children>
       <Button layoutX="23.0" layoutY="68.0" mnemonicParsing="false" text="Đăng ký thuê nhà văn hóa" />
       <Button layoutX="354.0" layoutY="68.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="194.0" text="Quản lý nhà văn hóa" />

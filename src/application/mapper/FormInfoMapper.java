@@ -1,18 +1,18 @@
 package application.mapper;
 
-import application.model.Form_info;
+import application.model.FormInfo;
 
 import java.sql.ResultSet;
 
-public class FormInfoMapper implements RowMapper<Form_info>{
+public class FormInfoMapper implements RowMapper<FormInfo>{
 
 	@Override
-	public Form_info mapRow(ResultSet rs) {
+	public FormInfo mapRow(ResultSet rs) {
 		try {
-			Form_info form = new Form_info();
+			FormInfo form = new FormInfo();
 			form.setId(rs.getInt("id"));
 			form.setFullname(rs.getString("fullname"));
-			form.setAdress(rs.getString("adress"));
+			form.setAddress(rs.getString("adress"));
 			form.setCredit_card(rs.getString("credit_card"));
 			form.setBirthday(rs.getDate("birthday"));
 			form.setGender(rs.getString("gender"));
@@ -28,6 +28,11 @@ public class FormInfoMapper implements RowMapper<Form_info>{
 			form.setPhone(rs.getString("phone"));
 			form.setPermanent_address(rs.getString("permanent_address"));
 			form.setSum_price(rs.getLong("sum_price"));
+			form.setChair(rs.getInt("number_chair"));
+			form.setTable(rs.getInt("number_table"));
+			form.setSpeaker(rs.getInt("number_speaker"));
+			form.setRadio(rs.getInt("number_radio"));
+			form.setProjector(rs.getInt("number_projector"));
 			return form;
 		} catch (Exception e) {
 			return null;

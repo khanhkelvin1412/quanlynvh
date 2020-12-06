@@ -2,10 +2,10 @@ package application.model;
 
 import java.util.Date;
 
-public class Form_info {
+public class FormInfo {
 	private Integer id;
 	private String fullname;
-	private String adress;
+	private String address;
 	private String credit_card;
 	private Date birthday;
 	private String gender;
@@ -21,17 +21,23 @@ public class Form_info {
 	private String phone;
 	private String permanent_address;
 	private Long sum_price;
+	private Integer chair;
+	private Integer table;
+	private Integer speaker;
+	private Integer radio;
+	private Integer projector;
+	private String room;
 	
-	public Form_info() {
+	public FormInfo() {
 	}
 
-	public Form_info(Integer id, String fullname, String adress, String credit_card, Date birthday, String gender,
-			String resident, String reason, Integer deposit, Integer status, Integer status_pay,
-			Date date_of_allocation, String nation, String religion, String address_of_allocation, String phone,
-			String permanent_address, Long sum_price) {
+	public FormInfo(Integer id, String fullname, String address, String credit_card, Date birthday, String gender,
+					String resident, String reason, Integer deposit, Integer status, Integer status_pay,
+					Date date_of_allocation, String nation, String religion, String address_of_allocation, String phone,
+					String permanent_address, Long sum_price) {
 		this.id = id;
 		this.fullname = fullname;
-		this.adress = adress;
+		this.address = address;
 		this.credit_card = credit_card;
 		this.birthday = birthday;
 		this.gender = gender;
@@ -65,12 +71,12 @@ public class Form_info {
 		this.fullname = fullname;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCredit_card() {
@@ -191,5 +197,53 @@ public class Form_info {
 
 	public void setSum_price(Long sum_price) {
 		this.sum_price = sum_price;
+	}
+
+	public Integer getChair() {
+		return chair;
+	}
+
+	public void setChair(Integer chair) {
+		this.chair = chair;
+	}
+
+	public Integer getTable() {
+		return table;
+	}
+
+	public void setTable(Integer table) {
+		this.table = table;
+	}
+
+	public Integer getSpeaker() {
+		return speaker;
+	}
+
+	public void setSpeaker(Integer speaker) {
+		this.speaker = speaker;
+	}
+
+	public Integer getRadio() {
+		return radio;
+	}
+
+	public void setRadio(Integer radio) {
+		this.radio = radio;
+	}
+
+	public Integer getProjector() {
+		return projector;
+	}
+
+	public void setProjector(Integer projector) {
+		this.projector = projector;
+	}
+
+	public String getRoom() {
+		return room;
+	}
+
+	public void setRoom(String room) {
+		this.room = room;
 	}
 }
